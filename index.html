@@ -595,6 +595,7 @@ function moveSecondHands() {
       }
       containers[i].style.webkitTransform = 'rotateZ('+ containers[i].angle +'deg)';
       containers[i].style.transform = 'rotateZ('+ containers[i].angle +'deg)';
+      initLocalClocks();
     }
   }, 1000);
 }
@@ -627,12 +628,11 @@ function scheduleSkin(dateTime, skin){
  *  Main function to set the clock times
  */
 (function() {
-  // Initialise any local time clocks
   initLocalClocks();
-  // Start the seconds container moving
-  moveSecondHands();
-  // Set the intial minute hand container transition, and then each subsequent step
-  setUpMinuteHands();
+
+  setInterval(function() {
+    initLocalClocks();
+  }, 1000);
   
   var now = new Date();
   scheduleSkin(new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0, 0), "sleep");
