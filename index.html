@@ -1,0 +1,646 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> 
+<html lang="en"> 
+    <head> 
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+
+        <style>
+.frame {
+    color: rgb(0, 25, 78);
+    display: inline-block;
+    letter-spacing: -0.36px;
+    text-decoration: none solid rgb(0, 25, 78);
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(0, 25, 78);
+    perspective-origin: 216px 221px;
+    transform-origin: 216px 221px;
+    caret-color: rgb(0, 25, 78);
+    border: 0px none rgb(0, 25, 78);
+    border-radius: 9px 9px 9px 9px;
+    font: normal normal 400 normal 18px / 32.4px avenirnextltw01-regular, Helvetica, Arial, sans-serif;
+    margin: 36px -267.109px 36px 0px;
+    outline: rgb(0, 25, 78) none 0px;
+    padding: 36px;
+    width: 600px;
+}/*#frame*/
+
+.frame:after {
+    color: rgb(0, 25, 78);
+    letter-spacing: -0.36px;
+    text-decoration: none solid rgb(0, 25, 78);
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(0, 25, 78);
+    caret-color: rgb(0, 25, 78);
+    border: 0px none rgb(0, 25, 78);
+    font: normal normal 400 normal 18px / 32.4px avenirnextltw01-regular, Helvetica, Arial, sans-serif;
+    outline: rgb(0, 25, 78) none 0px;
+}/*#frame:after*/
+
+.frame:before {
+    color: rgb(0, 25, 78);
+    letter-spacing: -0.36px;
+    text-decoration: none solid rgb(0, 25, 78);
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(0, 25, 78);
+    caret-color: rgb(0, 25, 78);
+    border: 0px none rgb(0, 25, 78);
+    font: normal normal 400 normal 18px / 32.4px avenirnextltw01-regular, Helvetica, Arial, sans-serif;
+    outline: rgb(0, 25, 78) none 0px;
+}/*#frame:before*/
+
+.clock {
+    background-position: 50% 50%;
+    bottom: 0px;
+    color: rgb(0, 25, 78);
+    display: inline-block;
+    height: 360px;
+    left: 0px;
+    letter-spacing: -0.36px;
+    position: relative;
+    right: 0px;
+    text-decoration: none solid rgb(0, 25, 78);
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+    top: 0px;
+    width: 360px;
+    column-rule-color: rgb(0, 25, 78);
+    perspective-origin: 180px 180px;
+    transform-origin: 180px 180px;
+    caret-color: rgb(0, 25, 78);
+    background: rgb(255, 255, 255) url("https://cssanimation.rocks/images/posts/clocks/ios_clock.svg") no-repeat scroll 50% 50% / 88% padding-box border-box;
+    border: 0px none rgb(0, 25, 78);
+    border-radius: 50% 50% 50% 50%;
+    font: normal normal 400 normal 18px / 32.4px avenirnextltw01-regular, Helvetica, Arial, sans-serif;
+    outline: rgb(0, 25, 78) none 0px;
+    transition: all 2.5s cubic-bezier(0.12, 1.03, 0.34, 1) 0s;
+}/*#clock*/
+
+.clock:after {
+    bottom: 172.812px;
+    color: rgb(0, 25, 78);
+    content: '""';
+    display: block;
+    height: 7.1875px;
+    left: 180px;
+    letter-spacing: -0.36px;
+    position: absolute;
+    right: 172.812px;
+    text-decoration: none solid rgb(0, 25, 78);
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+    top: 180px;
+    width: 7.1875px;
+    z-index: 10;
+    column-rule-color: rgb(0, 25, 78);
+    perspective-origin: 3.59375px 3.59375px;
+    transform: matrix(1, 0, 0, 1, -3.5, -3.5);
+    transform-origin: 3.59375px 3.59375px;
+    caret-color: rgb(0, 25, 78);
+    background: rgb(255, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;
+    border: 0px none rgb(0, 25, 78);
+    border-radius: 50% 50% 50% 50%;
+    font: normal normal 400 normal 18px / 32.4px avenirnextltw01-regular, Helvetica, Arial, sans-serif;
+    outline: rgb(0, 25, 78) none 0px;
+}/*#clock:after*/
+
+.clock:before {
+    bottom: 158.406px;
+    color: rgb(0, 25, 78);
+    content: '""';
+    display: block;
+    height: 21.5938px;
+    left: 180px;
+    letter-spacing: -0.36px;
+    position: absolute;
+    right: 158.406px;
+    text-decoration: none solid rgb(0, 25, 78);
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+    top: 180px;
+    width: 21.5938px;
+    z-index: 0;
+    column-rule-color: rgb(0, 25, 78);
+    perspective-origin: 10.7969px 10.7969px;
+    transform: matrix(1, 0, 0, 1, -11, -11);
+    transform-origin: 10.7969px 10.7969px;
+    caret-color: rgb(0, 25, 78);
+    background: rgb(0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;
+    border: 0px none rgb(0, 25, 78);
+    border-radius: 50% 50% 50% 50%;
+    font: normal normal 400 normal 18px / 32.4px avenirnextltw01-regular, Helvetica, Arial, sans-serif;
+    outline: rgb(0, 25, 78) none 0px;
+}/*#clock:before*/
+
+.hours-container {
+    bottom: 0px;
+    color: rgb(0, 25, 78);
+    height: 360px;
+    left: 0px;
+    letter-spacing: -0.36px;
+    position: absolute;
+    right: 0px;
+    text-decoration: none solid rgb(0, 25, 78);
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+    top: 0px;
+    width: 360px;
+    column-rule-color: rgb(0, 25, 78);
+    perspective-origin: 180px 180px;
+    transform: matrix(0.999995, 0.00329283, -0.00329283, 0.999995, 0, 0);
+    transform-origin: 180px 180px;
+    caret-color: rgb(0, 25, 78);
+    animation: rotate 43200s linear 0s infinite normal none running;
+    border: 0px none rgb(0, 25, 78);
+    font: normal normal 400 normal 18px / 32.4px avenirnextltw01-regular, Helvetica, Arial, sans-serif;
+    outline: rgb(0, 25, 78) none 0px;
+}/*#hours-container*/
+
+.hours-container:after {
+    color: rgb(0, 25, 78);
+    letter-spacing: -0.36px;
+    text-decoration: none solid rgb(0, 25, 78);
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(0, 25, 78);
+    caret-color: rgb(0, 25, 78);
+    border: 0px none rgb(0, 25, 78);
+    font: normal normal 400 normal 18px / 32.4px avenirnextltw01-regular, Helvetica, Arial, sans-serif;
+    outline: rgb(0, 25, 78) none 0px;
+}/*#hours-container:after*/
+
+.hours-container:before {
+    color: rgb(0, 25, 78);
+    letter-spacing: -0.36px;
+    text-decoration: none solid rgb(0, 25, 78);
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(0, 25, 78);
+    caret-color: rgb(0, 25, 78);
+    border: 0px none rgb(0, 25, 78);
+    font: normal normal 400 normal 18px / 32.4px avenirnextltw01-regular, Helvetica, Arial, sans-serif;
+    outline: rgb(0, 25, 78) none 0px;
+}/*#hours-container:before*/
+
+.hours {
+    bottom: 180px;
+    color: rgb(0, 25, 78);
+    height: 72px;
+    left: 176.391px;
+    letter-spacing: -0.36px;
+    position: absolute;
+    right: 176.422px;
+    text-decoration: none solid rgb(0, 25, 78);
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+    top: 108px;
+    width: 7.1875px;
+    column-rule-color: rgb(0, 25, 78);
+    perspective-origin: 3.59375px 36px;
+    transform: matrix(0.622515, -0.782608, 0.782608, 0.622515, 0, 0);
+    transform-origin: 3.59375px 72px;
+    caret-color: rgb(0, 25, 78);
+    background: rgb(0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;
+    border: 0px none rgb(0, 25, 78);
+    border-radius: 85% 85% 85% 85% / 10% 10% 10% 10%;
+    font: normal normal 400 normal 18px / 32.4px avenirnextltw01-regular, Helvetica, Arial, sans-serif;
+    outline: rgb(0, 25, 78) none 0px;
+}/*#hours*/
+
+.hours:after {
+    color: rgb(0, 25, 78);
+    letter-spacing: -0.36px;
+    text-decoration: none solid rgb(0, 25, 78);
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(0, 25, 78);
+    caret-color: rgb(0, 25, 78);
+    border: 0px none rgb(0, 25, 78);
+    font: normal normal 400 normal 18px / 32.4px avenirnextltw01-regular, Helvetica, Arial, sans-serif;
+    outline: rgb(0, 25, 78) none 0px;
+}/*#hours:after*/
+
+.hours:before {
+    color: rgb(0, 25, 78);
+    letter-spacing: -0.36px;
+    text-decoration: none solid rgb(0, 25, 78);
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(0, 25, 78);
+    caret-color: rgb(0, 25, 78);
+    border: 0px none rgb(0, 25, 78);
+    font: normal normal 400 normal 18px / 32.4px avenirnextltw01-regular, Helvetica, Arial, sans-serif;
+    outline: rgb(0, 25, 78) none 0px;
+}/*#hours:before*/
+
+.minutes-container {
+    bottom: 0px;
+    color: rgb(0, 25, 78);
+    height: 360px;
+    left: 0px;
+    letter-spacing: -0.36px;
+    position: absolute;
+    right: 0px;
+    text-decoration: none solid rgb(0, 25, 78);
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+    top: 0px;
+    width: 360px;
+    column-rule-color: rgb(0, 25, 78);
+    perspective-origin: 180px 180px;
+    transform-origin: 180px 180px;
+    caret-color: rgb(0, 25, 78);
+    border: 0px none rgb(0, 25, 78);
+    font: normal normal 400 normal 18px / 32.4px avenirnextltw01-regular, Helvetica, Arial, sans-serif;
+    outline: rgb(0, 25, 78) none 0px;
+    transition: transform 0.3s cubic-bezier(0.4, 2.08, 0.55, 0.44) 0s, -webkit-transform 0.3s cubic-bezier(0.4, 2.08, 0.55, 0.44) 0s;
+}/*#minutes-container*/
+
+.minutes-container:after {
+    color: rgb(0, 25, 78);
+    letter-spacing: -0.36px;
+    text-decoration: none solid rgb(0, 25, 78);
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(0, 25, 78);
+    caret-color: rgb(0, 25, 78);
+    border: 0px none rgb(0, 25, 78);
+    font: normal normal 400 normal 18px / 32.4px avenirnextltw01-regular, Helvetica, Arial, sans-serif;
+    outline: rgb(0, 25, 78) none 0px;
+}/*#minutes-container:after*/
+
+.minutes-container:before {
+    color: rgb(0, 25, 78);
+    letter-spacing: -0.36px;
+    text-decoration: none solid rgb(0, 25, 78);
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(0, 25, 78);
+    caret-color: rgb(0, 25, 78);
+    border: 0px none rgb(0, 25, 78);
+    font: normal normal 400 normal 18px / 32.4px avenirnextltw01-regular, Helvetica, Arial, sans-serif;
+    outline: rgb(0, 25, 78) none 0px;
+}/*#minutes-container:before*/
+
+.minutes {
+    bottom: 180px;
+    color: rgb(0, 25, 78);
+    height: 126px;
+    left: 176.391px;
+    letter-spacing: -0.36px;
+    position: absolute;
+    right: 176.422px;
+    text-decoration: none solid rgb(0, 25, 78);
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+    top: 54px;
+    width: 7.1875px;
+    column-rule-color: rgb(0, 25, 78);
+    perspective-origin: 3.59375px 63px;
+    transform: matrix(-0.207912, 0.978148, -0.978148, -0.207912, 0, 0);
+    transform-origin: 3.59375px 126px;
+    caret-color: rgb(0, 25, 78);
+    background: rgb(0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;
+    border: 0px none rgb(0, 25, 78);
+    border-radius: 150% 150% 150% 150% / 10% 10% 10% 10%;
+    font: normal normal 400 normal 18px / 32.4px avenirnextltw01-regular, Helvetica, Arial, sans-serif;
+    outline: rgb(0, 25, 78) none 0px;
+}/*#minutes*/
+
+.minutes:after {
+    color: rgb(0, 25, 78);
+    letter-spacing: -0.36px;
+    text-decoration: none solid rgb(0, 25, 78);
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(0, 25, 78);
+    caret-color: rgb(0, 25, 78);
+    border: 0px none rgb(0, 25, 78);
+    font: normal normal 400 normal 18px / 32.4px avenirnextltw01-regular, Helvetica, Arial, sans-serif;
+    outline: rgb(0, 25, 78) none 0px;
+}/*#minutes:after*/
+
+.minutes:before {
+    color: rgb(0, 25, 78);
+    letter-spacing: -0.36px;
+    text-decoration: none solid rgb(0, 25, 78);
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(0, 25, 78);
+    caret-color: rgb(0, 25, 78);
+    border: 0px none rgb(0, 25, 78);
+    font: normal normal 400 normal 18px / 32.4px avenirnextltw01-regular, Helvetica, Arial, sans-serif;
+    outline: rgb(0, 25, 78) none 0px;
+}/*#minutes:before*/
+
+.seconds-container {
+    bottom: 0px;
+    color: rgb(0, 25, 78);
+    height: 360px;
+    left: 0px;
+    letter-spacing: -0.36px;
+    position: absolute;
+    right: 0px;
+    text-decoration: none solid rgb(0, 25, 78);
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+    top: 0px;
+    width: 360px;
+    column-rule-color: rgb(0, 25, 78);
+    perspective-origin: 180px 180px;
+    transform: matrix(-0.669131, 0.743145, -0.743145, -0.669131, 0, 0);
+    transform-origin: 180px 180px;
+    caret-color: rgb(0, 25, 78);
+    border: 0px none rgb(0, 25, 78);
+    font: normal normal 400 normal 18px / 32.4px avenirnextltw01-regular, Helvetica, Arial, sans-serif;
+    outline: rgb(0, 25, 78) none 0px;
+    transition: transform 0.2s cubic-bezier(0.4, 2.08, 0.55, 0.44) 0.031s, -webkit-transform 0.2s cubic-bezier(0.4, 2.08, 0.55, 0.44) 0.031s;
+}/*#seconds-container*/
+
+.seconds-container:after {
+    color: rgb(0, 25, 78);
+    letter-spacing: -0.36px;
+    text-decoration: none solid rgb(0, 25, 78);
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(0, 25, 78);
+    caret-color: rgb(0, 25, 78);
+    border: 0px none rgb(0, 25, 78);
+    font: normal normal 400 normal 18px / 32.4px avenirnextltw01-regular, Helvetica, Arial, sans-serif;
+    outline: rgb(0, 25, 78) none 0px;
+}/*#seconds-container:after*/
+
+.seconds-container:before {
+    color: rgb(0, 25, 78);
+    letter-spacing: -0.36px;
+    text-decoration: none solid rgb(0, 25, 78);
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(0, 25, 78);
+    caret-color: rgb(0, 25, 78);
+    border: 0px none rgb(0, 25, 78);
+    font: normal normal 400 normal 18px / 32.4px avenirnextltw01-regular, Helvetica, Arial, sans-serif;
+    outline: rgb(0, 25, 78) none 0px;
+}/*#seconds-container:before*/
+
+.seconds {
+    bottom: 180px;
+    color: rgb(0, 25, 78);
+    height: 108px;
+    left: 178.188px;
+    letter-spacing: -0.36px;
+    position: absolute;
+    right: 178.219px;
+    text-decoration: none solid rgb(0, 25, 78);
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+    top: 72px;
+    width: 3.59375px;
+    z-index: 8;
+    column-rule-color: rgb(0, 25, 78);
+    perspective-origin: 1.79688px 54px;
+    transform: matrix(0.587785, 0.809017, -0.809017, 0.587785, 0, 0);
+    transform-origin: 1.79688px 108px;
+    caret-color: rgb(0, 25, 78);
+    background: rgb(255, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;
+    border: 0px none rgb(0, 25, 78);
+    border-radius: 200% 200% 200% 200% / 10% 10% 10% 10%;
+    font: normal normal 400 normal 18px / 32.4px avenirnextltw01-regular, Helvetica, Arial, sans-serif;
+    outline: rgb(0, 25, 78) none 0px;
+}/*#seconds*/
+
+.seconds:after {
+    color: rgb(0, 25, 78);
+    letter-spacing: -0.36px;
+    text-decoration: none solid rgb(0, 25, 78);
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(0, 25, 78);
+    caret-color: rgb(0, 25, 78);
+    border: 0px none rgb(0, 25, 78);
+    font: normal normal 400 normal 18px / 32.4px avenirnextltw01-regular, Helvetica, Arial, sans-serif;
+    outline: rgb(0, 25, 78) none 0px;
+}/*#seconds:after*/
+
+.seconds:before {
+    color: rgb(0, 25, 78);
+    letter-spacing: -0.36px;
+    text-decoration: none solid rgb(0, 25, 78);
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(0, 25, 78);
+    caret-color: rgb(0, 25, 78);
+    border: 0px none rgb(0, 25, 78);
+    font: normal normal 400 normal 18px / 32.4px avenirnextltw01-regular, Helvetica, Arial, sans-serif;
+    outline: rgb(0, 25, 78) none 0px;
+}/*#seconds:before*/
+
+.skin-body-neutral {
+    background: rgba(200, 200, 200, 0.9) none repeat scroll 0% 0% / auto padding-box border-box;
+}
+
+.skin-body-wakeup {
+    background: MediumSeaGreen none repeat scroll 0% 0% / auto padding-box border-box;
+}
+
+.skin-body-sleep {
+    background: tomato none repeat scroll 0% 0% / auto padding-box border-box;
+}
+
+.picture {
+	width: 360px;
+	height: 360px;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+    background-size: cover !important;
+    display: block;
+}
+
+.skin-picture-neutral {
+    background: url("images/neutral.jpg") no-repeat;
+}
+
+.skin-picture-wakeup {
+    background: url("images/wakeup.jpg") no-repeat;
+}
+
+.skin-picture-sleep {
+    background: url("images/sleep.jpg") no-repeat;
+}
+
+table {
+    margin: auto;
+    width: 50%;
+}
+
+        </style>
+    </head> 
+    <body class="skin-body-neutral"> 
+        <table>
+            <tr>
+                <td>
+                    <div class="frame">
+                    <article class="clock">
+                        <div class="hours-container">
+                            <div class="hours"></div>
+                        </div>
+                        <div class="minutes-container">
+                            <div class="minutes"></div>
+                        </div>
+                        <div class="seconds-container">
+                            <div class="seconds"></div>
+                        </div>
+                    </article>
+                    </div>
+                </td>
+                <td>
+                    <div class="frame">
+                        <div class="skin-picture-neutral picture"/>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    <script type="text/javascript">
+/*
+ * Starts any clocks using the user's local time
+ * From: cssanimation.rocks/clocks
+ */
+function initLocalClocks() {
+  // Get the local time using JS
+  var date = new Date;
+  var seconds = date.getSeconds();
+  var minutes = date.getMinutes();
+  var hours = date.getHours();
+
+  // Create an object with each hand and it's angle in degrees
+  var hands = [
+    {
+      hand: 'hours',
+      angle: (hours * 30) + (minutes / 2)
+    },
+    {
+      hand: 'minutes',
+      angle: (minutes * 6)
+    },
+    {
+      hand: 'seconds',
+      angle: (seconds * 6)
+    }
+  ];
+  // Loop through each of these hands to set their angle
+  for (var j = 0; j < hands.length; j++) {
+    var elements = document.querySelectorAll('.' + hands[j].hand);
+    for (var k = 0; k < elements.length; k++) {
+        elements[k].style.webkitTransform = 'rotateZ('+ hands[j].angle +'deg)';
+        elements[k].style.transform = 'rotateZ('+ hands[j].angle +'deg)';
+        // If this is a minute hand, note the seconds position (to calculate minute position later)
+        if (hands[j].hand === 'minutes') {
+          elements[k].parentNode.setAttribute('data-second-angle', hands[j + 1].angle);
+        }
+    }
+  }
+}
+
+/*
+ * Set a timeout for the first minute hand movement (less than 1 minute), then rotate it every minute after that
+ */
+function setUpMinuteHands() {
+  // Find out how far into the minute we are
+  var containers = document.querySelectorAll('.minutes-container');
+  var secondAngle = containers[0].getAttribute("data-second-angle");
+  if (secondAngle > 0) {
+    // Set a timeout until the end of the current minute, to move the hand
+    var delay = (((360 - secondAngle) / 6) + 0.1) * 1000;
+    setTimeout(function() {
+      moveMinuteHands(containers);
+    }, delay);
+  }
+}
+
+/*
+ * Do the first minute's rotation
+ */
+function moveMinuteHands(containers) {
+  for (var i = 0; i < containers.length; i++) {
+    containers[i].style.webkitTransform = 'rotateZ(6deg)';
+    containers[i].style.transform = 'rotateZ(6deg)';
+  }
+  // Then continue with a 60 second interval
+  setInterval(function() {
+    for (var i = 0; i < containers.length; i++) {
+      if (containers[i].angle === undefined) {
+        containers[i].angle = 12;
+      } else {
+        containers[i].angle += 6;
+      }
+      containers[i].style.webkitTransform = 'rotateZ('+ containers[i].angle +'deg)';
+      containers[i].style.transform = 'rotateZ('+ containers[i].angle +'deg)';
+    }
+  }, 60000);
+}
+
+/*
+ * Move the second containers
+ */
+function moveSecondHands() {
+  var containers = document.querySelectorAll('.seconds-container');
+  setInterval(function() {
+    for (var i = 0; i < containers.length; i++) {
+      if (containers[i].angle === undefined) {
+        containers[i].angle = 6;
+      } else {
+        containers[i].angle += 6;
+      }
+      containers[i].style.webkitTransform = 'rotateZ('+ containers[i].angle +'deg)';
+      containers[i].style.transform = 'rotateZ('+ containers[i].angle +'deg)';
+    }
+  }, 1000);
+}
+
+function setSkin(skin){
+    var body = document.querySelectorAll('body')[0];
+    body.classList.remove("skin-body-neutral");
+    body.classList.remove("skin-body-sleep");
+    body.classList.remove("skin-body-wakeup");
+    body.classList.add("skin-body-"+skin);
+    
+    var picture = document.querySelectorAll('.picture')[0];
+    picture.classList.remove("skin-picture-neutral");
+    picture.classList.remove("skin-picture-sleep");
+    picture.classList.remove("skin-picture-wakeup");
+    picture.classList.add("skin-picture-"+skin);
+}
+
+function scheduleSkin(dateTime, skin){
+    var now = new Date();
+    var millisToMorning = dateTime - now;
+    if (millisToMorning <= 0) {
+        setSkin(skin);
+        millisToMorning += 86400000;
+    }
+    setTimeout(function(){setSkin(skin); scheduleSkin(dateTime, skin); }, millisToMorning);
+}
+
+/*
+ *  Main function to set the clock times
+ */
+(function() {
+  // Initialise any local time clocks
+  initLocalClocks();
+  // Start the seconds container moving
+  moveSecondHands();
+  // Set the intial minute hand container transition, and then each subsequent step
+  setUpMinuteHands();
+  
+  var now = new Date();
+  scheduleSkin(new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0, 0), "sleep");
+  scheduleSkin(new Date(now.getFullYear(), now.getMonth(), now.getDate(), 7, 0, 0, 0), "wakeup");
+  scheduleSkin(new Date(now.getFullYear(), now.getMonth(), now.getDate(), 9, 0, 0, 0), "neutral");
+  scheduleSkin(new Date(now.getFullYear(), now.getMonth(), now.getDate(), 20, 0, 0, 0), "sleep");
+})();
+
+        </script>
+    </body> 
+</html>
