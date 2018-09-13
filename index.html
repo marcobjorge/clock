@@ -148,7 +148,6 @@
     width: 360px;
     column-rule-color: rgb(0, 25, 78);
     perspective-origin: 180px 180px;
-    transform: matrix(0.999995, 0.00329283, -0.00329283, 0.999995, 0, 0);
     transform-origin: 180px 180px;
     caret-color: rgb(0, 25, 78);
     animation: rotate 43200s linear 0s infinite normal none running;
@@ -198,7 +197,6 @@
     width: 7.1875px;
     column-rule-color: rgb(0, 25, 78);
     perspective-origin: 3.59375px 36px;
-    transform: matrix(0.622515, -0.782608, 0.782608, 0.622515, 0, 0);
     transform-origin: 3.59375px 72px;
     caret-color: rgb(0, 25, 78);
     background: rgb(0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;
@@ -298,7 +296,6 @@
     width: 7.1875px;
     column-rule-color: rgb(0, 25, 78);
     perspective-origin: 3.59375px 63px;
-    transform: matrix(-0.207912, 0.978148, -0.978148, -0.207912, 0, 0);
     transform-origin: 3.59375px 126px;
     caret-color: rgb(0, 25, 78);
     background: rgb(0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;
@@ -349,7 +346,6 @@
     width: 360px;
     column-rule-color: rgb(0, 25, 78);
     perspective-origin: 180px 180px;
-    transform: matrix(-0.669131, 0.743145, -0.743145, -0.669131, 0, 0);
     transform-origin: 180px 180px;
     caret-color: rgb(0, 25, 78);
     border: 0px none rgb(0, 25, 78);
@@ -400,7 +396,6 @@
     z-index: 8;
     column-rule-color: rgb(0, 25, 78);
     perspective-origin: 1.79688px 54px;
-    transform: matrix(0.587785, 0.809017, -0.809017, 0.587785, 0, 0);
     transform-origin: 1.79688px 108px;
     caret-color: rgb(0, 25, 78);
     background: rgb(255, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;
@@ -497,7 +492,7 @@ table {
                 </td>
                 <td>
                     <div class="frame">
-                        <div class="skin-picture-neutral picture"/>
+                        <div class="skin-picture-neutral picture" onclick="nap()"/>
                     </div>
                 </td>
             </tr>
@@ -535,69 +530,8 @@ function initLocalClocks() {
     for (var k = 0; k < elements.length; k++) {
         elements[k].style.webkitTransform = 'rotateZ('+ hands[j].angle +'deg)';
         elements[k].style.transform = 'rotateZ('+ hands[j].angle +'deg)';
-        // If this is a minute hand, note the seconds position (to calculate minute position later)
-        if (hands[j].hand === 'minutes') {
-          elements[k].parentNode.setAttribute('data-second-angle', hands[j + 1].angle);
-        }
     }
   }
-}
-
-/*
- * Set a timeout for the first minute hand movement (less than 1 minute), then rotate it every minute after that
- */
-function setUpMinuteHands() {
-  // Find out how far into the minute we are
-  var containers = document.querySelectorAll('.minutes-container');
-  var secondAngle = containers[0].getAttribute("data-second-angle");
-  if (secondAngle > 0) {
-    // Set a timeout until the end of the current minute, to move the hand
-    var delay = (((360 - secondAngle) / 6) + 0.1) * 1000;
-    setTimeout(function() {
-      moveMinuteHands(containers);
-    }, delay);
-  }
-}
-
-/*
- * Do the first minute's rotation
- */
-function moveMinuteHands(containers) {
-  for (var i = 0; i < containers.length; i++) {
-    containers[i].style.webkitTransform = 'rotateZ(6deg)';
-    containers[i].style.transform = 'rotateZ(6deg)';
-  }
-  // Then continue with a 60 second interval
-  setInterval(function() {
-    for (var i = 0; i < containers.length; i++) {
-      if (containers[i].angle === undefined) {
-        containers[i].angle = 12;
-      } else {
-        containers[i].angle += 6;
-      }
-      containers[i].style.webkitTransform = 'rotateZ('+ containers[i].angle +'deg)';
-      containers[i].style.transform = 'rotateZ('+ containers[i].angle +'deg)';
-    }
-  }, 60000);
-}
-
-/*
- * Move the second containers
- */
-function moveSecondHands() {
-  var containers = document.querySelectorAll('.seconds-container');
-  setInterval(function() {
-    for (var i = 0; i < containers.length; i++) {
-      if (containers[i].angle === undefined) {
-        containers[i].angle = 6;
-      } else {
-        containers[i].angle += 6;
-      }
-      containers[i].style.webkitTransform = 'rotateZ('+ containers[i].angle +'deg)';
-      containers[i].style.transform = 'rotateZ('+ containers[i].angle +'deg)';
-      initLocalClocks();
-    }
-  }, 1000);
 }
 
 function setSkin(skin){
@@ -621,7 +555,20 @@ function scheduleSkin(dateTime, skin){
         setSkin(skin);
         millisToMorning += 86400000;
     }
-    setTimeout(function(){setSkin(skin); scheduleSkin(dateTime, skin); }, millisToMorning);
+    return setTimeout(function(){setSkin(skin); scheduleSkin(dateTime, skin); }, millisToMorning);
+}
+
+var napWakeupTimer;
+var napNeutralTimer;
+
+function nap(){
+    setSkin("sleep");
+    
+    var now = new Date();
+    clearTimeout(napWakeupTimer);
+    clearTimeout(napNeutralTimer);
+    napWakeupTimer = scheduleSkin(now.setHours(now.getHours()+10), "wakeup");
+    napNeutralTimer = scheduleSkin(now.setHours(now.getHours()+10), "neutral");
 }
 
 /*
