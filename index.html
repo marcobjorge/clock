@@ -555,7 +555,14 @@ function scheduleSkin(dateTime, skin){
         setSkin(skin);
         millisToMorning += 86400000;
     }
-    return setTimeout(function(){setSkin(skin); scheduleSkin(dateTime, skin); }, millisToMorning);
+    return setTimeout(
+        function(){
+            setSkin(skin); 
+            dateTime.setDate(dateTime.getDate()+1); 
+            scheduleSkin(dateTime, skin); 
+        }, 
+        millisToMorning
+    );
 }
 
 var napWakeupTimer;
@@ -567,8 +574,8 @@ function nap(){
     var now = new Date();
     clearTimeout(napWakeupTimer);
     clearTimeout(napNeutralTimer);
-    napWakeupTimer = scheduleSkin(now.setHours(now.getHours()+10), "wakeup");
-    napNeutralTimer = scheduleSkin(now.setHours(now.getHours()+10), "neutral");
+    napWakeupTimer = scheduleSkin(now.setHours(now.getHours()+1.5), "wakeup");
+    napNeutralTimer = scheduleSkin(now.setHours(now.getHours()+2.5), "neutral");
 }
 
 /*
