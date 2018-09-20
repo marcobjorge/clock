@@ -550,10 +550,10 @@ function setSkin(skin){
 
 function scheduleSkin(dateTime, skin){
     var now = new Date();
-    var millisToMorning = dateTime - now;
-    if (millisToMorning <= 0) {
+    var millisToDate = dateTime - now;
+    if (millisToDate <= 0) {
         setSkin(skin);
-        millisToMorning += 86400000;
+        millisToDate += 86400000;
     }
     return setTimeout(
         function(){
@@ -561,7 +561,23 @@ function scheduleSkin(dateTime, skin){
             dateTime.setDate(dateTime.getDate()+1); 
             scheduleSkin(dateTime, skin); 
         }, 
-        millisToMorning
+        millisToDate
+    );
+}
+
+function scheduleRestart(dateTime){
+    var now = new Date();
+    var millisToDate = dateTime - now;
+    if (millisToDate <= 0) {
+        millisToDate += 86400000;
+    }
+    return setTimeout(
+        function(){
+            location.reload();
+            dateTime.setDate(dateTime.getDate()+1); 
+            scheduleRestart(dateTime); 
+        }, 
+        millisToDate
     );
 }
 
@@ -575,7 +591,7 @@ function nap(){
     clearTimeout(napWakeupTimer);
     clearTimeout(napNeutralTimer);
     napWakeupTimer = scheduleSkin(now.setHours(now.getHours()+1.5), "wakeup");
-    napNeutralTimer = scheduleSkin(now.setHours(now.getHours()+2.5), "neutral");
+    napNeutralTimer = scheduleSkin(now.setHours(now.getHours()+2.0), "neutral");
 }
 
 /*
@@ -591,8 +607,9 @@ function nap(){
   var now = new Date();
   scheduleSkin(new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0, 0), "sleep");
   scheduleSkin(new Date(now.getFullYear(), now.getMonth(), now.getDate(), 7, 0, 0, 0), "wakeup");
-  scheduleSkin(new Date(now.getFullYear(), now.getMonth(), now.getDate(), 9, 0, 0, 0), "neutral");
+  scheduleSkin(new Date(now.getFullYear(), now.getMonth(), now.getDate(), 8, 0, 0, 0), "neutral");
   scheduleSkin(new Date(now.getFullYear(), now.getMonth(), now.getDate(), 20, 0, 0, 0), "sleep");
+  scheduleRestart(new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 1, 0, 0));
 })();
 
         </script>
