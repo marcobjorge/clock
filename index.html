@@ -574,7 +574,7 @@ function nap(){
     var now = new Date();
     clearTimeout(napWakeupTimer);
     clearTimeout(napNeutralTimer);
-    napWakeupTimer = scheduleSkin(now.setMinutes(now.getMinutes()+90), "wakeup");
+    napWakeupTimer = scheduleSkin(now.setMinutes(now.getMinutes()+60), "wakeup");
     napNeutralTimer = scheduleSkin(now.setHours(now.getHours()+2.0), "neutral");
 }
 
