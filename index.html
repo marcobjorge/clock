@@ -443,12 +443,16 @@
     background: tomato none repeat scroll 0% 0% / auto padding-box border-box;
 }
 
+.skin-body-bus {
+    background: #ffd800 none repeat scroll 0% 0% / auto padding-box border-box;
+}
+
 .picture {
-	width: 360px;
-	height: 360px;
-	border-radius: 50%;
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
+    width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
     background-size: cover !important;
     display: block;
 }
@@ -465,6 +469,10 @@
     background: url("images/sleep.jpg") no-repeat;
 }
 
+.skin-picture-bus {
+    background: url("images/bus.jpg") no-repeat;
+}
+
 table {
     margin: auto;
     width: 50%;
@@ -473,6 +481,12 @@ table {
         </style>
     </head> 
     <body class="skin-body-neutral"> 
+        <audio id="skin-audio-bus">
+            <source class="skin-audio-bus" src="audio/bus.wav"/>
+        </audio>
+        <audio id="skin-audio-sleep">
+            <source class="skin-audio-sleep" src="audio/sleep.wav"/>
+        </audio>
         <table>
             <tr>
                 <td>
@@ -534,18 +548,37 @@ function initLocalClocks() {
   }
 }
 
+var currentAudio = null;
+
 function setSkin(skin){
+    console.debug("enabling skin "+skin);
+
     var body = document.querySelectorAll('body')[0];
     body.classList.remove("skin-body-neutral");
     body.classList.remove("skin-body-sleep");
     body.classList.remove("skin-body-wakeup");
+    body.classList.remove("skin-body-bus");
     body.classList.add("skin-body-"+skin);
     
     var picture = document.querySelectorAll('.picture')[0];
     picture.classList.remove("skin-picture-neutral");
     picture.classList.remove("skin-picture-sleep");
     picture.classList.remove("skin-picture-wakeup");
+    picture.classList.remove("skin-picture-bus");
     picture.classList.add("skin-picture-"+skin);
+
+    if(currentAudio != null){
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+        currentAudio = null;
+    }
+
+    var audio = document.querySelectorAll("#skin-audio-"+skin)[0];
+    if(audio){
+        console.log("playing sound "+audio);
+        audio.play();
+        currentAudio = audio;
+    }
 }
 
 function scheduleSkin(dateTime, skin){
@@ -578,6 +611,7 @@ function nap(){
     napNeutralTimer = scheduleSkin(now.setHours(now.getHours()+2.0), "neutral");
 }
 
+
 /*
  *  Main function to set the clock times
  */
@@ -590,6 +624,7 @@ function nap(){
   
   var now = new Date();
   scheduleSkin(new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0, 0), "sleep");
+  scheduleSkin(new Date(now.getFullYear(), now.getMonth(), now.getDate(), 6, 20, 0, 0), "bus");
   scheduleSkin(new Date(now.getFullYear(), now.getMonth(), now.getDate(), 7, 0, 0, 0), "wakeup");
   scheduleSkin(new Date(now.getFullYear(), now.getMonth(), now.getDate(), 8, 0, 0, 0), "neutral");
   scheduleSkin(new Date(now.getFullYear(), now.getMonth(), now.getDate(), 20, 0, 0, 0), "sleep");
