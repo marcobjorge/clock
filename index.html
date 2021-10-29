@@ -447,6 +447,10 @@
     background: #ffd800 none repeat scroll 0% 0% / auto padding-box border-box;
 }
 
+.skin-body-prepare-for-sleep {
+    background: #ffb347 none repeat scroll 0% 0% / auto padding-box border-box;
+}
+
 .picture {
     width: 360px;
     height: 360px;
@@ -473,6 +477,10 @@
     background: url("images/bus.jpg") no-repeat;
 }
 
+.skin-picture-prepare-for-sleep {
+    background: url("images/prepare-for-sleep.jpg") no-repeat;
+}
+
 table {
     margin: auto;
     width: 50%;
@@ -486,6 +494,9 @@ table {
         </audio>
         <audio id="skin-audio-sleep">
             <source class="skin-audio-sleep" src="audio/sleep.wav"/>
+        </audio>
+        <audio id="skin-audio-prepare-for-sleep">
+            <source class="skin-audio-sleep" src="audio/prepare-for-sleep.wav"/>
         </audio>
         <table>
             <tr>
@@ -558,6 +569,7 @@ function setSkin(skin){
     body.classList.remove("skin-body-sleep");
     body.classList.remove("skin-body-wakeup");
     body.classList.remove("skin-body-bus");
+    body.classList.remove("skin-body-prepare-for-sleep");
     body.classList.add("skin-body-"+skin);
     
     var picture = document.querySelectorAll('.picture')[0];
@@ -565,6 +577,7 @@ function setSkin(skin){
     picture.classList.remove("skin-picture-sleep");
     picture.classList.remove("skin-picture-wakeup");
     picture.classList.remove("skin-picture-bus");
+    picture.classList.remove("skin-picture-prepare-for-sleep");
     picture.classList.add("skin-picture-"+skin);
 
     if(currentAudio != null){
@@ -608,7 +621,7 @@ function nap(){
     clearTimeout(napWakeupTimer);
     clearTimeout(napNeutralTimer);
     napWakeupTimer = scheduleSkin(now.setMinutes(now.getMinutes()+60), "wakeup");
-    napNeutralTimer = scheduleSkin(now.setHours(now.getHours()+2.0), "neutral");
+    //napNeutralTimer = scheduleSkin(now.setHours(now.getHours()+2.0), "neutral");
 }
 
 
@@ -625,9 +638,9 @@ function nap(){
   var now = new Date();
   scheduleSkin(new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0, 0), "sleep");
   scheduleSkin(new Date(now.getFullYear(), now.getMonth(), now.getDate(), 6, 20, 0, 0), "bus");
-  scheduleSkin(new Date(now.getFullYear(), now.getMonth(), now.getDate(), 7, 0, 0, 0), "wakeup");
-  scheduleSkin(new Date(now.getFullYear(), now.getMonth(), now.getDate(), 8, 0, 0, 0), "neutral");
-  scheduleSkin(new Date(now.getFullYear(), now.getMonth(), now.getDate(), 20, 0, 0, 0), "sleep");
+  scheduleSkin(new Date(now.getFullYear(), now.getMonth(), now.getDate(), 8, 0, 0, 0), "wakeup");
+  scheduleSkin(new Date(now.getFullYear(), now.getMonth(), now.getDate(), 19, 45, 0, 0), "prepare-for-sleep");
+  scheduleSkin(new Date(now.getFullYear(), now.getMonth(), now.getDate(), 20, 30, 0, 0), "sleep");
 })();
 
         </script>
