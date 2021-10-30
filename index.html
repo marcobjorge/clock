@@ -510,6 +510,7 @@ table {
 .date {
     font-size: 60px;
     text-align: center;
+    font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
 }
         </style>
     </head> 
@@ -555,6 +556,7 @@ table {
                 </td>
             </tr>
         </table>
+        <div id="dayOfWeek" class="date" style="font-weight: bold;"></div>
         <div id="date" class="date"></div>
     <script type="text/javascript">
 /*
@@ -598,7 +600,8 @@ function initLocalClocks() {
   var day = ordinalWithSuffix(date.getDate());
   var month = date.toLocaleDateString("en-US", {month: 'long'});
   var year = date.toLocaleDateString("en-US", {year: 'numeric'});
-  document.getElementById("date").innerHTML = dayOfWeek + "<br/>" + month + " " + day + ", " + year;
+  document.getElementById("dayOfWeek").innerText = dayOfWeek;
+  document.getElementById("date").innerText = month + " " + day + ", " + year;
 }
 
 function ordinalWithSuffix(i) {
