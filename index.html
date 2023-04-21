@@ -694,10 +694,10 @@ function hideMenu(){
     initLocalClocks();
   }, 1000);
  
-  Cron("0 20 6 * * 1-5").schedule(() => { setSkin("bus"); });
+  Cron("0 30 6 * * 1-5").schedule(() => { setSkin("bus"); });
   Cron("0 0 7 * * *").schedule(() => { setSkin("play"); });
-  Cron("0 45 19 * * *").schedule(() => { setSkin("prepare-for-sleep"); });
-  Cron("0 30 20 * * *").schedule(() => { setSkin("sleep"); });
+  Cron("0 15 19 * * *").schedule(() => { setSkin("prepare-for-sleep"); });
+  Cron("0 45 19 * * *").schedule(() => { setSkin("sleep"); });
 })();
 
         </script>
