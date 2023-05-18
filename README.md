@@ -6,4 +6,4 @@ It goes red at 8pm, green at 7am and grey at 8.30am. Press the picture for a mid
 
 It's the software version of "trainer clocks for kids".
 
-https://drive.google.com/drive/folders/1MgGc5czkaQmVelII6NKxnKmZzPi0plAi?usp=sharing
+https://drive.google.com/file/d/1DBXOH6egqFTK4MFAqvfwpT4VtZHoW1AR/view?usp=sharing
